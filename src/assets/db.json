@@ -1,0 +1,196 @@
+{
+  "newsFeed": [
+    {
+      "id": 1,
+      "fullname": "Rajkumar Rao",
+      "email": "raj@gmail.com",
+      "time": "2:58",
+      "imageURL": "/assets/images/raj.jpeg",
+      "post": "First become rich then be a philosopher",
+      "likes": 131,
+      "dislikes": 3,
+      "comments": [
+        {
+          "fullname": "Shahrukh Khan",
+          "image": "/assets/images/srk.jpg",
+          "comment": "That is really nice",
+          "time": "3:00",
+          "likes": 15,
+          "dislikes": 0,
+          "reply": [
+            {
+              "fullname": "Ayushman Khurana",
+              "image": "/assets/images/ayush.jpg",
+              "time": "4:58",
+              "comment": "must be a big fan",
+              "likes": 31,
+              "dislikes": 0
+            },
+            {
+              "fullname": "Ranotosh Paul",
+              "image": "/assets/images/rano.jpg",
+              "time": "6:00",
+              "comment": "Marry him bro",
+              "likes": 10,
+              "dislikes": 0
+            }
+          ]
+        },
+        {
+          "fullname": "Ashwariya Rai",
+          "image": "./assets/images/ash.jpg",
+          "time": "11:49",
+          "comment": "Nice thinking",
+          "likes": 300,
+          "dislikes": 2,
+          "reply": [
+            {
+              "fullname": "Rajkumar Rao",
+              "image": "/assets/images/raj.jpeg",
+              "time": "12:00",
+              "comment": "Thank you!!!",
+              "likes": 911,
+              "dislikes": 0
+            },
+            {
+              "fullname": "Ashwariya Rai",
+              "image": "/assets/images/ash.jpg",
+              "time": "14:00pm",
+              "comment": "Most Welcome!",
+              "likes": 911,
+              "dislikes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fullname": "Ranotosh Paul",
+      "email": "rano@gmail.com",
+      "time": "3:30",
+      "imageURL": "/assets/images/rano.jpg",
+      "post": "He thinks he can and he thinks he cannot are same things",
+      "likes": 100,
+      "dislikes": 1,
+      "comments": [
+        {
+          "fullname": "Ayushman Khurana",
+          "image": "/assets/images/ayush.jpg",
+          "comment": "Amazing!",
+          "time": "4:58",
+          "likes": 12,
+          "dislikes": 1,
+          "reply": [
+            {
+              "fullname": "Ashwariya Rai",
+              "image": "/assets/images/ash.jpg",
+              "time": "5:30",
+              "comment": "Childish!",
+              "likes": 82,
+              "dislikes": 0
+            },
+            {
+              "fullname": "Ranotosh Paul",
+              "image": "/assets/images/rano.jpg",
+              "time": "6:30",
+              "comment": "Cool!",
+              "likes": 10,
+              "dislikes": 0
+            }
+          ]
+        },
+        {
+          "fullname": "Rajkumar Rao",
+          "image": "/assets/images/raj.jpeg",
+          "comment": "You are a poet and I didn't even know it...",
+          "time": "7:30",
+          "likes": 109,
+          "dislikes": 0,
+          "reply": [
+            {
+              "fullname": "Ashwariya Rai",
+              "image": "/assets/images/ash.jpg",
+              "time": "12:58",
+              "comment": "Copycat has arraived",
+              "likes": 911,
+              "dislikes": 0
+            },
+            {
+              "fullname": "Ayushman Khurana",
+              "image": "/assets/images/ayush.jpg",
+              "time": "20:00",
+              "comment": "You must be a big Salman Khan fan",
+              "likes": 911,
+              "dislikes": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fullname": "Akshata Singh",
+      "email": "aka@gmail.com",
+      "time": "5:00",
+      "imageURL": "/assets/images/sam.jpg",
+      "post": "The world tongue-twister champion just got arrested. I hear they're gonna give him a really tough sentence.",
+      "likes": 81,
+      "dislikes": 3,
+      "comments": [
+        {
+          "fullname": "Shahrukh Khan",
+          "image": "/assets/images/srk.jpg",
+          "comment": "Haaa haaa!That is funny!!!",
+          "time": "5:30",
+          "likes": 98,
+          "dislikes": 0,
+          "reply": [
+            {
+              "fullname": "Rajkumar Rao",
+              "image": "/assets/images/raj.jpeg",
+              "time": "6:00",
+              "comment": "Sir!Are you in your senses?",
+              "likes": 92,
+              "dislikes": 3
+            },
+            {
+              "fullname": "Shahrukh Khan",
+              "image": "/assets/images/srk.jpg",
+              "time": "7:30",
+              "comment": "Yes bro!That is called demotional",
+              "likes": 440,
+              "dislikes": 0
+            }
+          ]
+        },
+        {
+          "fullname": "Ranotosh Paul",
+          "image": "./assets/images/rano.jpg",
+          "time": "6:30",
+          "comment": "For a specific audience though...",
+          "likes": 122,
+          "dislikes": 0,
+          "reply": [
+            {
+              "fullname": "Akshata Singh",
+              "image": "/assets/images/sam.jpg",
+              "time": "8:28",
+              "comment": "Wow!Somebody is still alive!",
+              "likes": 98,
+              "dislikes": 1
+            },
+            {
+              "fullname": "Ayushman Khurana",
+              "image": "/assets/images/ayush.jpg",
+              "time": "10:12",
+              "comment": "Shattered!",
+              "likes": 10,
+              "dislikes": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
