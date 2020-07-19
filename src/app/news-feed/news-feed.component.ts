@@ -26,6 +26,7 @@ export class NewsFeedComponent implements OnInit {
       if (this._postService.getData('user')) {
         this.loginUserData = this._postService.getData('user');
       }
+      $(".modal-backdrop").remove();
     }
   }
 
@@ -103,7 +104,6 @@ export class NewsFeedComponent implements OnInit {
   createPost() {
     if (!JSON.parse(localStorage.getItem('user'))) {
       $("#cannotDo").modal('show');
-      return;
     }
     else {
       $("#postModal").modal('show');
