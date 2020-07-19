@@ -1,0 +1,75 @@
+<div class="image">
+  <div class="app flex-row align-items-center containeronly">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="card-group">
+            <div class="card p-4">
+              <div class="card-body">
+                <form [formGroup]="loginForm">
+                  <h1>Login</h1>
+                  <p class="text-muted">Sign In to your account</p>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope" style="font-size:11px"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username(email)" name="user_name"
+                      id="user_name" formControlName="userName" (blur)="logValidationErrors()">
+                  </div>
+                  <span *ngIf="formError.userName" class="help-block">
+                    {{formError.userName}}
+                  </span>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-lock" style="font-size:18px"></i></span>
+                    </div>
+                    <input type="password" class="form-control" placeholder="Password" name="passwrd" id="passwrd"
+                      formControlName="passwd" (blur)="logValidationErrors()">
+                  </div>
+                  <span *ngIf="formError.passwd" class="help-block">
+                    {{formError.passwd}}
+                  </span>
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="button" class="btn btn-primary px-4" [disabled]="!loginForm.valid"
+                        (click)="logIn()">Log In</button>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+              <div class="card-body text-center">
+                <div>
+                  <h2>Sign up</h2>
+                  <p>If you do not have account please create</p>
+                  <button type="button" (click)="registration()" class="btn btn-primary active mt-3">Register
+                    Now!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- login modal -->
+<!-- Modal -->
+<div class="modal fade" role="dialog" id="cantLogin">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <p><b>Oops..You are not authorized</b></p>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        Please Register..
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<div class="image">
+  <div class="app flex-row align-items-center containeronly">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="card-group">
+
+            <div class="card p-4">
+              <div class="card-body">
+                <form [formGroup]="registraionForm">
+                  <h1>Sign Up</h1>
+                  <p class="text-muted">Create your account</p>
+
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Fullname" name="fullname" id="fullname"
+                      formControlName="fullName" (blur)="logValidationErrors()">
+                  </div>
+                  <span *ngIf="formError.fullName" class="help-block">
+                    {{formError.fullName}}
+                  </span>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope" style="font-size:11px"></i></span>
+                    </div>
+                    <input type="email" class="form-control" placeholder="Email" name="email" id="email"
+                      formControlName="email" (blur)="logValidationErrors()">
+                  </div>
+                  <span *ngIf="formError.email" class="help-block">
+                    {{formError.email}}
+                  </span>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-lock" style="font-size:18px"></i></span>
+                    </div>
+                    <input type="password" class="form-control" placeholder="Password" name="password" id="password"
+                      formControlName="passwd" (blur)="logValidationErrors()">
+                  </div>
+                  <span *ngIf="formError.passwd" class="help-block">
+                    {{formError.passwd}}
+                  </span>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-picture-o" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="file" id="myfile" name="myfile" formControlName="uploadPhoto"
+                      accept=".jpg, .jpeg, .png" (blur)="logValidationErrors()" (change)="loadImageFileAsURL($event)">
+                  </div>
+                  <span *ngIf="formError.uploadPhoto" class="help-block">
+                    {{formError.uploadPhoto}}
+                  </span>
+                  <img src="C:\fakepath\centrearea_server_get.png" alt="" > 
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="button" class="btn btn-primary px-4" [disabled]="!registraionForm.valid"
+                        (click)="register()">SignUp</button>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="card text-white bg-primary py-5 d-md-down-none">
+              <div class="card-body text-center">
+                <div>
+                  <h2>Sign up</h2>
+                  <p>If you have account please login</p>
+                  <button type="button" class="btn btn-primary active mt-4" (click)="logIn()">Log In</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

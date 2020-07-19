@@ -1,0 +1,196 @@
+<div class="container pt10 pb10">
+  <div class="card-group">
+
+    <div class="card card-head">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="title">Feed</div>
+        </div>
+        <div class="col-md-6 text-right header-button">
+          <button type="button" class="btn btn-primary" (click)="createPost()">Create Post</button>
+        </div>
+        <div class="col-md-3 text-right" *ngIf="loginUserData">
+          <img class="img" alt="Alter Images" [src]="loginUserData.imageURL">
+          <span class="header-name">{{loginUserData.fullname}}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngFor="let data of postCommentData;let i=index">
+    <div class="post" *ngIf="data.post">
+      <div class="row">
+        <div class="col-md-1">
+          <img class="img" alt="Alter Images" [src]="data.imageURL">
+        </div>
+        <div class="col-md-11">
+          <div>
+            <span class="name">{{data.fullname}}</span>
+            <span class="subtitle">
+              {{data.time}}
+              <span class="post-details-label" (click)="data.show=(!data.show)">
+                <span *ngIf="data.show">hide comments</span>
+                <span *ngIf="!data.show">show comments</span>
+              </span>
+            </span>
+            <div>{{data.post}}</div>
+            <div class="row styleforMarginLikes">
+              <div class="col-md-2 styleForPaddingLike">
+                <i class="fa fa-thumbs-up thumbsIcon" aria-hidden="true" (click)="numberOflikesDislikes(i,'like')"></i>
+                {{data.likes}}
+              </div>
+              <div class="col-md-2 styleForPaddingLike">
+                <i class="fa fa-thumbs-down thumbsIcon" aria-hidden="true"
+                  (click)="numberOflikesDislikes(i,'dislike')"></i>
+                {{data.dislikes}}
+              </div>
+            </div>
+
+            <textarea class="comment-text" id="comments" name="myComment{{i}}" rows="1" cols="50" placeholder="Share your thoughts" [(ngModel)]="data[i]"></textarea>
+            <br>
+            <button type="button" class="btn btn-outline-primary" (click)="addComment(i,data[i]);data[i]=''">Add Comment</button>
+            
+
+          </div>
+          <div *ngIf="data.show" class="styleComments">            
+
+            <div class="mt10" *ngFor="let comment of data.comments;let j=index">
+              <div class="row">
+                <div class="col-md-1">
+                  <img class="img" alt="Alter Images" [src]="comment.image">
+                </div>
+                <div class="col-md-11">
+                  <span class="name">{{comment.fullname}}</span>
+                  <span class="subtitle">
+                    {{comment.time}}
+                  </span>
+                  <div>{{comment.comment}}</div>
+
+                  <div class="row styleforMarginLikes">
+                    <div class="col-md-2">
+                      <i class="fa fa-thumbs-up thumbsIcon" aria-hidden="true"
+                        (click)="numberOflikesDislikesComment(i,j,'like')"></i>
+                      {{comment.likes}}
+                    </div>
+                    <div class="col-md-2">
+                      <i class="fa fa-thumbs-down thumbsIcon" aria-hidden="true"
+                        (click)="numberOflikesDislikesComment(i,j,'dislike')"></i>
+                      {{comment.dislikes}}
+                    </div>
+                    <div class="col-md-2">
+                      <p (click)="comment.replyComment = true" class="replyButton">Reply</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-11">
+                  <div class="styleComments" *ngFor="let reply of comment.reply;let k=index">
+                    <div class="row">
+                      <div class="col-md-1">
+                        <img class="img" alt="Alter Images" [src]="reply.image">
+                      </div>
+                      <div class="col-md-11">
+
+                        <span class="name">{{reply.fullname}}</span>
+                        <span class="subtitle">
+                          {{reply.time}}
+                        </span>
+                        <div>{{reply.comment}}</div>
+
+                        <div class="row styleforMarginLikes">
+                          <div class="col-md-2 styleForPaddingLike">
+                            <i class="fa fa-thumbs-up thumbsIcon" aria-hidden="true"
+                              (click)="numberOflikesDislikesCommentReply(i,j,k,'like')"></i>
+                            {{reply.likes}}
+                          </div>
+                          <div class="col-md-2 styleForPaddingLike">
+                            <i class="fa fa-thumbs-down thumbsIcon" aria-hidden="true"
+                              (click)="numberOflikesDislikesCommentReply(i,j,k,'dislike')"></i>
+                            {{reply.dislikes}}
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="row" *ngIf="comment.replyComment">
+                    <div class="col-md-8">
+                      <input type="text" placeholder="Reply..." name="replyname{{j}}" class="replyInputText"
+                        id="replyid" [(ngModel)]="reply[j]">
+                      <button type="button" class="btn btn-primary"
+                        (click)="replyComment(i,j,reply[j]); reply[j]=''">Reply</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row marginComment">
+              <div class="col-md-12">
+                <textarea id="comments" name="myComment{{i}}" style="background-color: #DCE2E5;" rows="4" cols="50"
+                  placeholder="Share your thoughts" [(ngModel)]="data[i]"></textarea>
+              </div>
+            </div>
+            <div class="row marginComment">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <button type="button" class="btn btn-primary" (click)="addComment(i,data[i]);data[i]=''">Add
+                  Comment</button>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- post modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="postModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <p><b>What is going on your mind?</b></p>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <textarea id="post" name="myPost" rows="4" cols="50" placeholder="How is your day?"
+            [(ngModel)]="mySelectedPost"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="newPost()">Post</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- login modal -->
+  <!-- Modal -->
+  <div class="modal fade" role="dialog" id="cannotDo">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <p><b>Oops..You are not authorized</b></p>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          Please login..<button type="button" class="btn btn-primary" (click)="login()">Log In</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
