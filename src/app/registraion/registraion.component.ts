@@ -128,7 +128,6 @@ export class RegistraionComponent implements OnInit {
   
       reader.onload = (event: ProgressEvent) => {
         this.imageURL = (<FileReader>event.target).result;
-        console.log(this.imageURL);
       }
   
       reader.readAsDataURL(event.target.files[0]);
