@@ -49,7 +49,7 @@
 
             <textarea class="comment-text" id="comments" name="myComment{{i}}" rows="1" cols="50" placeholder="Share your thoughts" [(ngModel)]="data[i]"></textarea>
             <br>
-            <button type="button" class="btn btn-outline-primary" (click)="addComment(i,data[i]);data[i]=''">Add Comment</button>
+            <button type="button" class="btn btn-outline-primary" [disabled]="!data[i]" (click)="addComment(i,data[i]);data[i]=''">Add Comment</button>
             
 
           </div>
@@ -125,7 +125,7 @@
                     <div class="col-md-8">
                       <input type="text" placeholder="Reply..." name="replyname{{j}}" class="replyInputText"
                         id="replyid" [(ngModel)]="reply[j]">
-                      <button type="button" class="btn btn-primary"
+                      <button type="button" class="btn btn-primary" [disabled]="!reply[j]"
                         (click)="replyComment(i,j,reply[j]); reply[j]=''">Reply</button>
                     </div>
                   </div>
@@ -169,7 +169,7 @@
             [(ngModel)]="mySelectedPost"></textarea>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" (click)="newPost()">Post</button>
+          <button type="button" class="btn btn-primary" [disabled]="!mySelectedPost" (click)="newPost()">Post</button>
         </div>
       </div>
 
